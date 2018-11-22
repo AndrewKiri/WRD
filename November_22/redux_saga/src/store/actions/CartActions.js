@@ -1,7 +1,6 @@
-import fetch from 'api/category'
+const prefix = 'CART'
 
-export const fetchProduct = () => {
-  const { products } = fetch()
-
-  return { products }
+export default {
+  ADD: `${prefix}:ADD`,
+  REDUCE: `${prefix}:REDUCE`
 }

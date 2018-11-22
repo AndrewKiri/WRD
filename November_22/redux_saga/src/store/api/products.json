@@ -1,17 +1,27 @@
 [
   {
-      "id": 82,
-      "name": "SuperBeer",
-      "price": 2.5
+      "id": 0,
+      "name": "Snikers",
+      "price": 2.50
   },
   {
-      "id": 79,
-      "name": "Becks",
-      "price": 1.8
+      "id": 1,
+      "name": "Milky Way",
+      "price": 2.00
   },
   {
-      "id": 81,
-      "name": "OrvalYeah",
-      "price": 2.3
+      "id": 2,
+      "name": "Mars",
+      "price": 1.50
+  },
+  {
+      "id": 3,
+      "name": "Milka",
+      "price": 3.50
+  },
+  {
+      "id": 4,
+      "name": "Wedel",
+      "price": 1.00
   }
 ]

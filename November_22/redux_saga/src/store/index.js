@@ -11,4 +11,6 @@ let middleware = composeEnhancers(applyMiddleware(logger, sagaMiddleware));
 
 const store = createStore(reducers, middleware)
 
+sagaMiddleware.run(rootSaga)
+
 export default store
