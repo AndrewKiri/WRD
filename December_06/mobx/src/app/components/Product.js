@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
 import {inject, observer} from "mobx-react";
 import AddToCart from './AddToCart'
+import { lifecycle, compose } from 'recompose';
 
-const enhance = inject(stores => ({
-  cartItems: stores.CartStore.cartItems
-}))
+const enhance = compose(
+  inject(stores => ({
+    cartItems: stores.CartStore.cartItems
+  })),
+  lifecycle({
+    componentDidMount() {
+      console.log(`I'm mounted: ${this.props.name}`)
+    }
+  })
+)
 
 // @observer
 class Product extends Component {
   render() {
     const { name, price, stock, id, cartItems } = this.props;
-    console.log(cartItems[String(id)])
     return (
       <div>
         <div>{name}</div>

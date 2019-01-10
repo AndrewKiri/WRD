@@ -1,10 +1,18 @@
 import React, { Component, Fragment } from 'react';
 import { inject } from 'mobx-react'
 import Product from './Product'
+import { compose, withProps } from 'recompose'
 
-const enhance = inject(stores => ({
-  listOfProducts: stores.ProductsStore.listOfProducts
-}))
+const enhance = compose(
+  inject(stores => ({
+    listOfProducts: stores.ProductsStore.listOfProducts
+  })),
+  withProps(console.log),
+  withProps(({ listOfProducts }) => ({
+    listOfProducts: listOfProducts.filter(product => product.price < 3)
+  })),
+  withProps(console.log)
+)
 
 const styles = {
   display: 'flex',
